@@ -65,7 +65,7 @@ function gauntlet_scripts() {
 // Add specific CSS class by filter
 add_filter( 'body_class', 'icon_class_names' );
 function icon_class_names( $classes ) {
-	if(isset($_COOKIE['testIcon'])){
+	if(!isset($_COOKIE['testIcon']) || empty($_COOKIE['testIcon'])){
 		$icon=rand(0,6);
 		setcookie ("testIcon", $icon, time() - 3600);
 	}else{
