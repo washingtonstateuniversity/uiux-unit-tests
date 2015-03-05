@@ -71,8 +71,20 @@ function icon_class_names( $classes ) {
 	}else{
 		$icon=$_COOKIE['testIcon'];
 	}
+	
+	$icons = array(
+		'block',
+		'grow',
+		'pulse',
+		'color',
+		'text',
+		'animated',
+		'arrow',
+	);
+	
+	
 	// add 'class-name' to the $classes array
-	$classes[] = 'icon-test-'.$icon;
+	$classes[] = 'icon-test-'.$icons[$icon];
 	// return the $classes array
 	return $classes;
 }
