@@ -26,6 +26,7 @@ var wsu_analytics = {
 		"college":"none",
 		"unit":"ucomm",
 		"subunit":"none",
+		"unit_type":"department",
 		"events":[]
 	},
 	"app":{
