@@ -220,19 +220,6 @@ window.wsu_analytics.site.events   = [
 		}
 	},
 	{
-		element:"a[href*='uxtest.wp.wsu.edu/thanks']",
-		options:{
-			category:"uxtest",
-			action:"click menu",
-			label:"found menu item",
-			value:function(){
-				var cur_time = new Date().getTime();
-				return (cur_time - window.timer)/1000;
-			},
-			overwrites:"true"
-		}
-	},
-{
 		element:"#wsu-actions-tabs button",
 		options:{
 			action:" closed",
@@ -335,6 +322,19 @@ window.wsu_analytics.site.events   = [
 			category:"Spine Framework interactions",
 			label:function(ele){
 				return $("#spine").is(".shelved") ? "closed" : "opened" ;
+			},
+			overwrites:"true"
+		}
+	},
+	{
+		element:"a[href*='uxtest.wp.wsu.edu/thanks']",
+		options:{
+			category:"uxtest",
+			action:"click menu",
+			label:"found menu item",
+			value:function(){
+				var cur_time = new Date().getTime();
+				return (cur_time - window.timer)/1000;
 			},
 			overwrites:"true"
 		}
