@@ -329,10 +329,10 @@ window.wsu_analytics.site.events   = [
 		element:"a[href*='uxtest.wp.wsu.edu/thanks']",
 		options:{
 			category:"uxtest",
-			action:"click menu",
+			action:"click menu (in secs.)",
 			label:function(){
 				var cur_time = new Date().getTime();
-				return (cur_time - window.timer)/1000 + "sec.";
+				return Math.round((cur_time - window.timer)/1000);
 			},
 			overwrites:"true"
 		}
