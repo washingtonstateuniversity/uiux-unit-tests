@@ -3,7 +3,6 @@ window.wsu_analytics.wsuglobal.events = [
 	{
 		element:"#wsu-actions-tabs button",
 		options:{
-			action:" closed",
 			action:function(ele){
 				return "Action tab "+ (ele.closest('li').is(".opened") ?"opening":"closing");
 			},
@@ -331,10 +330,9 @@ window.wsu_analytics.site.events   = [
 		options:{
 			category:"uxtest",
 			action:"click menu",
-			label:"found menu item",
-			value:function(){
+			label:function(){
 				var cur_time = new Date().getTime();
-				return (cur_time - window.timer)/1000;
+				return (cur_time - window.timer)/1000 + "sec.";
 			},
 			overwrites:"true"
 		}
