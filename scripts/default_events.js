@@ -189,10 +189,13 @@ window.wsu_analytics.site.events   = [
 	},
 	//this should be built on which are loading in the customizer
 	{
-		element:"a[href*='facebook.com']",
+		element:"a[href*='facebook.com'],a[href*='twitter.com'],a[href*='plus.google.com'],a[href*='linkedin.com']",
 		options:{
 			category:"Social",
-			action:"Facebook",
+			action:"social channel visited",
+			label:function(ele){
+				return ""+$(ele).text();
+			},
 			overwrites:"true"
 		}
 	},
