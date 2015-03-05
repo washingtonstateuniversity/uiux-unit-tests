@@ -1,3 +1,4 @@
+(function($, window, analytics){
 window.wsu_analytics.wsuglobal.events = [
 	{
 		element:"#wsu-actions-tabs button",
@@ -211,3 +212,4 @@ window.wsu_analytics.site.events   = [
 		}
 	},
 ];
+})(jQuery, window, window.wsu_analytics);
