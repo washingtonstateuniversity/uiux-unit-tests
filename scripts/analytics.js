@@ -51,7 +51,8 @@
 					namedSpace:'siteScope',
 					cookieDomain:".wsu.edu",
 					dimension:[
-						{'name':'dimension1','val': ""+analytics.app.is_editor }//editor <bool>(as string)
+						{'name':'dimension1','val': ""+analytics.app.is_editor },//editor <bool>(as string)
+						{'name':'dimension2','val': ""+analytics.site.icon_type }
 					],
 					events: analytics.site.events
 				}

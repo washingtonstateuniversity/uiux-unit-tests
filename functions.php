@@ -1,4 +1,6 @@
 <?php
+$icon=null;
+
 
 add_action( 'init', 'wsu_ga_remove_analytics' );
 function wsu_ga_remove_analytics() {
@@ -8,6 +10,31 @@ function wsu_ga_remove_analytics() {
 	remove_action( 'wp_footer', array( $wsu_analytics, 'global_tracker' ), 999 );
 	remove_action( 'admin_footer', array( $wsu_analytics, 'global_tracker' ), 999 );
 }
+
+
+
+add_action( 'wp_loaded', 'set_icon' );
+function set_icon(){
+	if(!isset($_COOKIE['testIcon']) || empty($_COOKIE['testIcon'])){
+		$icon=rand(0,6);
+		setcookie ("testIcon", $icon, time() - 3600);
+	}else{
+		$icon=$_COOKIE['testIcon'];
+	}
+	
+	$icons = array(
+		'block',
+		'grow',
+		'pulse',
+		'color',
+		'text',
+		'animated',
+		'arrow',
+	);
+
+	$GLOBALS['icon'] = $icons[$icon];
+}
+
 
 
 /**
@@ -38,6 +65,7 @@ var wsu_analytics = {
 	},
 	"site":{
 		"ga_code":"UA-17815664-9",
+		"icon_type":"<?=$GLOBALS['icon']?>",
 		"events":[]
 	}
 };
@@ -66,26 +94,8 @@ function gauntlet_scripts() {
 // Add specific CSS class by filter
 add_filter( 'body_class', 'icon_class_names' );
 function icon_class_names( $classes ) {
-	if(!isset($_COOKIE['testIcon']) || empty($_COOKIE['testIcon'])){
-		$icon=rand(0,6);
-		setcookie ("testIcon", $icon, time() - 3600);
-	}else{
-		$icon=$_COOKIE['testIcon'];
-	}
-	
-	$icons = array(
-		'block',
-		'grow',
-		'pulse',
-		'color',
-		'text',
-		'animated',
-		'arrow',
-	);
-	
-	
 	// add 'class-name' to the $classes array
-	$classes[] = 'icon-test-'.$icons[$icon];
+	$classes[] = 'icon-test-'.$GLOBALS['icon'];
 	// return the $classes array
 	return $classes;
 }
