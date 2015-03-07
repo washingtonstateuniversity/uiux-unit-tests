@@ -79,8 +79,8 @@ add_action( 'wp_enqueue_scripts', 'gauntlet_scripts' );
  * Enqueue child theme Javascript files.
  */
 function gauntlet_scripts() {
-	//wp_enqueue_script( 'jtrack.min.js', '//repo.wsu.edu/jtrack/develop/jtrack.min.js', array( 'jquery' ), false, true );
-	wp_enqueue_script( 'jtrack.min.js', '//rawgit.com/washingtonstateuniversity/jTrack/dev/src/jtrack.js', array( 'jquery' ), false, true );
+	wp_enqueue_script( 'jtrack.min.js', '//repo.wsu.edu/jtrack/develop/jtrack.min.js', array( 'jquery' ), false, true );
+	//wp_enqueue_script( 'jtrack.min.js', '//rawgit.com/washingtonstateuniversity/jTrack/dev/src/jtrack.js', array( 'jquery' ), false, true );
 
 	wp_enqueue_script( 'default_events.js', get_stylesheet_directory_uri() . '/scripts/default_events.js', array( 'jquery' ), false, true );
 	wp_enqueue_script( 'default_ui-events.js', get_stylesheet_directory_uri() . '/scripts/default_ui-events.js', array( 'jquery' ), false, true );	
