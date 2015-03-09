@@ -23,9 +23,10 @@ function set_icon(){
 	}
 	
 	$icons = array(
+		'default',
 		'block',
-		'grow',
-		'pulse',
+		//'grow',
+		//'pulse',
 		'color',
 		'text',
 		'animated',
