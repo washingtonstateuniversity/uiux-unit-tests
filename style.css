@@ -291,6 +291,13 @@
 	box-shadow: 0 6px 0 0 #981e32, 0 12px 0 0 #981e32;
 }
 
+.icon-test-color #shelve:before {
+	background: black;
+	-webkit-box-shadow: 0 6px 0 0 black, 0 12px 0 0 black;
+	-moz-box-shadow: 0 6px 0 0 black, 0 12px 0 0 black;
+	box-shadow: 0 6px 0 0 black, 0 12px 0 0 black;
+}
+
 .icon-test-grow .unshelved #shelve:before {
 	width: 3px;
 	left: 27px;
