@@ -15,13 +15,6 @@ function wsu_ga_remove_analytics() {
 
 add_action( 'wp_loaded', 'set_icon' );
 function set_icon(){
-	if(!isset($_COOKIE['testIcon']) || empty($_COOKIE['testIcon'])){
-		$icon=rand(0,6);
-		setcookie ("testIcon", $icon, time() - 3600);
-	}else{
-		$icon=$_COOKIE['testIcon'];
-	}
-	
 	$icons = array(
 		'default',
 		'block',
@@ -32,6 +25,13 @@ function set_icon(){
 		'animated',
 		'arrow',
 	);
+	
+	if(!isset($_COOKIE['testIcon']) || empty($_COOKIE['testIcon'])){
+		$icon=rand(0,count($icons)-1);
+		setcookie ("testIcon", $icon, time() - 3600);
+	}else{
+		$icon=$_COOKIE['testIcon'];
+	}
 
 	$GLOBALS['icon'] = $icons[$icon];
 }
